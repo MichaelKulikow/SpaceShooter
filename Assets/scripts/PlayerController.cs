@@ -59,7 +59,7 @@ public class PlayerController : GameComponent<SpaceShooter> {
         //horizontal = Input.GetAxis("Horizontal");
         //fire = Input.GetButton("Fire1");
         Move();
-        horizontal = 0.0f;
+        //horizontal = 0.0f;
         //if (fire)
         //    Debug.Log("Fire");
     }

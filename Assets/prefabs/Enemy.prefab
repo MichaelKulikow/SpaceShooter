@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11496358}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,6 +86,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff58f473d26c691419a576e905e9b48d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Explosion: {fileID: 198104, guid: 8aa707019a92cb74d891826f4bef3df4, type: 2}
+  PlayerExplosion: {fileID: 198104, guid: 8aa707019a92cb74d891826f4bef3df4, type: 2}
 --- !u!212 &21278428
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -127,6 +129,18 @@ Prefab:
       propertyPath: FireRate
       value: .200000003
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Explosion
+      value: 
+      objectReference: {fileID: 198104, guid: 8aa707019a92cb74d891826f4bef3df4, type: 2}
+    - target: {fileID: 0}
+      propertyPath: PlayerExplosion
+      value: 
+      objectReference: {fileID: 198104, guid: 8aa707019a92cb74d891826f4bef3df4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 152534}

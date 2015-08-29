@@ -15,7 +15,7 @@ GameObject:
   - 50: {fileID: 5072954}
   m_Layer: 0
   m_Name: Bomb
-  m_TagString: Untagged
+  m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,6 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff58f473d26c691419a576e905e9b48d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Explosion: {fileID: 198104, guid: 8aa707019a92cb74d891826f4bef3df4, type: 2}
+  PlayerExplosion: {fileID: 198104, guid: 8aa707019a92cb74d891826f4bef3df4, type: 2}
 --- !u!114 &11498956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -121,6 +123,18 @@ Prefab:
       propertyPath: Speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Bomb
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Explosion
+      value: 
+      objectReference: {fileID: 198104, guid: 8aa707019a92cb74d891826f4bef3df4, type: 2}
+    - target: {fileID: 0}
+      propertyPath: PlayerExplosion
+      value: 
+      objectReference: {fileID: 198104, guid: 8aa707019a92cb74d891826f4bef3df4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 172186}
