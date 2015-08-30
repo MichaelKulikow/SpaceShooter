@@ -9,13 +9,17 @@ public class SpaceShooter : Game {
     public float StartWait;
     public float WaveWait;
     public int Score;
+    public ushort Life;
     public UnityEngine.UI.Text Highscoretext;
+    public UnityEngine.UI.Text Lifetext;
     #region implemented abstract members of Game
     protected override void Initialize () {
         //throw new System.NotImplementedException ();
         //UGB.Pool.CreateNewObjectPoolEntry();
         Score = 0;
+        Life = 5;
         UpdateScore();
+        UpdateLife();
         StartCoroutine(SpawnWaves());
     }
     protected override void GameSetupReady () {
@@ -34,13 +38,20 @@ public class SpaceShooter : Game {
             yield return new WaitForSeconds(WaveWait);
         }
     }
-
     public void AddScore(int value) {
         Score += value;
         UpdateScore();
     }
+    public void DecrementLife() {
+        if (Life != 0)
+            Life--;
+        UpdateLife();
+    }
     void UpdateScore() {
         Highscoretext.text = "Score: " + Score;
+    }
+    void UpdateLife() {
+        Lifetext.text = "Life x" + Life;
     }
 }
 

@@ -531,7 +531,9 @@ MonoBehaviour:
   StartWait: 1
   WaveWait: 4
   Score: 0
+  Life: 0
   Highscoretext: {fileID: 310114696}
+  Lifetext: {fileID: 501719914}
 --- !u!1 &836136467
 GameObject:
   m_ObjectHideFlags: 0

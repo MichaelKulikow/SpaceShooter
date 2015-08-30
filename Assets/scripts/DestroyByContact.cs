@@ -16,6 +16,7 @@ public class DestroyByContact : GameComponent<SpaceShooter> {
         if (other.tag == "Player") {
             pexp = Instantiate(PlayerExplosion, other.transform.position, other.transform.rotation) as GameObject;
             Destroy(pexp, 1.0f);
+            UGB.GetGame<SpaceShooter>().DecrementLife();
         }
         UGB.GetGame<SpaceShooter>().AddScore(ScoreValue);
         Destroy(other.gameObject);
