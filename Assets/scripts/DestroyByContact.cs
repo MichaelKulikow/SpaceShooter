@@ -6,7 +6,7 @@ public class DestroyByContact : GameComponent<SpaceShooter> {
     public GameObject Explosion;
     public GameObject PlayerExplosion;
     void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log(other.name);
+        //Debug.Log(other.name);
         GameObject exp, pexp;
         if (other.tag == "Background" || other.tag == "Enemy" || other.tag == "Bomb") {
             return;

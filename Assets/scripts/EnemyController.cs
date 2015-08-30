@@ -10,8 +10,9 @@ public class EnemyController : GameComponent<SpaceShooter> {
     private float radiant;
     void OnEnable() {
         radiant = 2.0f;
+        nextFire = Time.time + FireRate;
     }
-	void FixedUpdate () {
+	void Update () {
         float newposx = GetComponent<Rigidbody2D>().position.x;
         float newposy = GetComponent<Rigidbody2D>().position.y;
         float radius = 1.5f;
@@ -20,10 +21,9 @@ public class EnemyController : GameComponent<SpaceShooter> {
         newposy = Mathf.Sin(radiant) * radius;
         Vector2 position = new Vector2(newposx, newposy);
         GetComponent<Rigidbody2D>().position = position;
-        if (Time.time > nextFire)
-        {
+        if (Time.time > nextFire) {
             nextFire = Time.time + FireRate;
-            GameObject bullet = Instantiate(Bomb, GetComponent<Transform>().position, Quaternion.identity) as GameObject;
+            GameObject bullet = Instantiate(Bomb, gameObject.transform.position, Quaternion.identity) as GameObject;
         }
 	}
 }

@@ -7,6 +7,7 @@ TagManager:
   - Background
   - Enemy
   - Bomb
+  - Bolt
   layers:
   - Default
   - TransparentFX

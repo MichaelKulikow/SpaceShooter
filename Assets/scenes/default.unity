@@ -187,7 +187,7 @@ GameObject:
   - 61: {fileID: 70604474}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e45e4f862b3ee64587326a694033c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Velocity: 20
+  Velocity: 10
   Shot: {fileID: 137766, guid: c89baf64977747e43804c175fd3248b2, type: 2}
   FireRate: 0
 --- !u!50 &70604473
@@ -405,48 +405,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 501719912}
---- !u!1001 &538685039
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 420072, guid: cd3c530894da6084c9566a5d432892c9, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 420072, guid: cd3c530894da6084c9566a5d432892c9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 420072, guid: cd3c530894da6084c9566a5d432892c9, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 420072, guid: cd3c530894da6084c9566a5d432892c9, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 420072, guid: cd3c530894da6084c9566a5d432892c9, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 420072, guid: cd3c530894da6084c9566a5d432892c9, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 420072, guid: cd3c530894da6084c9566a5d432892c9, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 420072, guid: cd3c530894da6084c9566a5d432892c9, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: cd3c530894da6084c9566a5d432892c9, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &602942287
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +525,10 @@ MonoBehaviour:
   gameInput: {fileID: 0}
   sceneTransition: {fileID: 0}
   version: 0
-  star: {fileID: 171952, guid: 22f4d23813e9a844299cffbcd8d68cb8, type: 2}
+  Enemy: {fileID: 152534, guid: cd3c530894da6084c9566a5d432892c9, type: 2}
+  EnemyCount: 3
+  SpawnWait: .5
+  StartWait: 1
 --- !u!1 &836136467
 GameObject:
   m_ObjectHideFlags: 0
