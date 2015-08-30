@@ -4,6 +4,7 @@ using System.Collections;
 
 public class SpaceShooter : Game {
     public GameObject Enemy;
+    public GameObject Player;
     public int EnemyCount;
     public float SpawnWait;
     public float StartWait;
@@ -12,10 +13,14 @@ public class SpaceShooter : Game {
     public ushort Life;
     public UnityEngine.UI.Text Highscoretext;
     public UnityEngine.UI.Text Lifetext;
+    public UnityEngine.UI.Text GameOverText;
+    private bool gameover;
     #region implemented abstract members of Game
     protected override void Initialize () {
         //throw new System.NotImplementedException ();
         //UGB.Pool.CreateNewObjectPoolEntry();
+        gameover = false;
+        GameOverText.text = "";
         Score = 0;
         Life = 5;
         UpdateScore();
@@ -24,6 +29,7 @@ public class SpaceShooter : Game {
     }
     protected override void GameSetupReady () {
         //throw new System.NotImplementedException ();
+        Instantiate(Player);
     }
 #endregion
     void Update(){
@@ -36,6 +42,8 @@ public class SpaceShooter : Game {
                 yield return new WaitForSeconds(SpawnWait);
             }
             yield return new WaitForSeconds(WaveWait);
+            if (gameover)
+                break;
         }
     }
     public void AddScore(int value) {
@@ -43,15 +51,23 @@ public class SpaceShooter : Game {
         UpdateScore();
     }
     public void DecrementLife() {
-        if (Life != 0)
+        if (Life > 0) {
             Life--;
+            Instantiate(Player);
+        } else {
+            GameOver();
+        }
         UpdateLife();
     }
-    void UpdateScore() {
+    public void UpdateScore() {
         Highscoretext.text = "Score: " + Score;
     }
-    void UpdateLife() {
+    public void UpdateLife() {
         Lifetext.text = "Life x" + Life;
+    }
+    public void GameOver() {
+        GameOverText.text = "Game Over!";
+        gameover = true;
     }
 }
 
