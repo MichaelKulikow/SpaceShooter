@@ -529,6 +529,9 @@ MonoBehaviour:
   EnemyCount: 3
   SpawnWait: .5
   StartWait: 1
+  WaveWait: 4
+  Score: 0
+  Highscoretext: {fileID: 310114696}
 --- !u!1 &836136467
 GameObject:
   m_ObjectHideFlags: 0

@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Velocity: 10
   Bomb: {fileID: 172186, guid: 4789270461ec2b34b8e2a39e74ce201c, type: 2}
-  FireRate: .200000003
+  FireRate: .5
 --- !u!114 &11496358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -88,6 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Explosion: {fileID: 198104, guid: 8aa707019a92cb74d891826f4bef3df4, type: 2}
   PlayerExplosion: {fileID: 198104, guid: 8aa707019a92cb74d891826f4bef3df4, type: 2}
+  ScoreValue: 10
 --- !u!212 &21278428
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -127,7 +128,7 @@ Prefab:
       objectReference: {fileID: 172186, guid: 4789270461ec2b34b8e2a39e74ce201c, type: 2}
     - target: {fileID: 0}
       propertyPath: FireRate
-      value: .200000003
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TagString
@@ -141,6 +142,10 @@ Prefab:
       propertyPath: PlayerExplosion
       value: 
       objectReference: {fileID: 198104, guid: 8aa707019a92cb74d891826f4bef3df4, type: 2}
+    - target: {fileID: 0}
+      propertyPath: ScoreValue
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 152534}

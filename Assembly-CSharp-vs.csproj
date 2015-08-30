@@ -139,7 +139,6 @@
      <Compile Include="Assets\scripts\Mover.cs" />
      <Compile Include="Assets\scripts\PlayerController.cs" />
      <Compile Include="Assets\scripts\SpaceShooter.cs" />
-     <Compile Include="Assets\scripts\StarMover.cs" />
      <None Include="Assets\UnityGameBase\Core\WebGL\CultureDetection_jslib.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
