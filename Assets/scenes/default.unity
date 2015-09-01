@@ -427,6 +427,8 @@ MonoBehaviour:
   version: 0
   Enemy: {fileID: 152534, guid: cd3c530894da6084c9566a5d432892c9, type: 2}
   Player: {fileID: 164136, guid: cdcd140fff142874890892ff5e190dd7, type: 2}
+  Bomb: {fileID: 172186, guid: 4789270461ec2b34b8e2a39e74ce201c, type: 2}
+  Explosion: {fileID: 198104, guid: 8aa707019a92cb74d891826f4bef3df4, type: 2}
   EnemyCount: 3
   SpawnWait: .5
   StartWait: 1

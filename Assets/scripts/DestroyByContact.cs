@@ -3,8 +3,6 @@ using System.Collections;
 using UnityGameBase;
 
 public class DestroyByContact : GameComponent<SpaceShooter> {
-    public GameObject Explosion;
-    public GameObject PlayerExplosion;
     public int ScoreValue;
     void OnTriggerEnter2D(Collider2D other) {
         //Debug.Log(other.name);
@@ -12,9 +10,13 @@ public class DestroyByContact : GameComponent<SpaceShooter> {
         if (other.tag == "Background" || other.tag == "Enemy" || other.tag == "Bomb") {
             return;
         }
-        exp = Instantiate(Explosion, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+        exp = UGB.Pool.GetInstance((int)SpaceShooter.Objecttype.explosion);
+        exp.transform.position = gameObject.transform.position;
+        exp.transform.rotation = gameObject.transform.rotation;
         if (other.tag == "Player") {
-            pexp = Instantiate(PlayerExplosion, other.transform.position, other.transform.rotation) as GameObject;
+            pexp = UGB.Pool.GetInstance((int)SpaceShooter.Objecttype.explosion);
+            pexp.transform.position = other.transform.position;
+            pexp.transform.rotation = other.transform.rotation;
             Destroy(pexp, 1.0f);
             UGB.GetGame<SpaceShooter>().DecrementLife();
         }

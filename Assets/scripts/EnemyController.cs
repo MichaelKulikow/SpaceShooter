@@ -4,7 +4,6 @@ using UnityGameBase;
 
 public class EnemyController : GameComponent<SpaceShooter> {
     public float Velocity;
-    public GameObject Bomb;
     public float FireRate;
     private float nextFire;
     private float radiant;
@@ -23,7 +22,9 @@ public class EnemyController : GameComponent<SpaceShooter> {
         GetComponent<Rigidbody2D>().position = position;
         if (Time.time > nextFire) {
             nextFire = Time.time + FireRate;
-            GameObject bullet = Instantiate(Bomb, gameObject.transform.position, Quaternion.identity) as GameObject;
+            GameObject bullet = UGB.Pool.GetInstance((int)SpaceShooter.Objecttype.bomb);
+            bullet.transform.position = gameObject.transform.position;
+            bullet.transform.rotation = Quaternion.identity;
         }
 	}
 }

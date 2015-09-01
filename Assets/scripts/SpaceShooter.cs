@@ -3,8 +3,16 @@ using UnityGameBase;
 using System.Collections;
 
 public class SpaceShooter : Game {
+    public enum Objecttype{
+        player,
+        enemy,
+        bomb,
+        explosion
+    }
     public GameObject Enemy;
     public GameObject Player;
+    public GameObject Bomb;
+    public GameObject Explosion;
     public int EnemyCount;
     public float SpawnWait;
     public float StartWait;
@@ -17,8 +25,6 @@ public class SpaceShooter : Game {
     private bool gameover;
     #region implemented abstract members of Game
     protected override void Initialize () {
-        //throw new System.NotImplementedException ();
-        //UGB.Pool.CreateNewObjectPoolEntry();
         gameover = false;
         GameOverText.text = "";
         Score = 0;
@@ -28,8 +34,11 @@ public class SpaceShooter : Game {
         StartCoroutine(SpawnWaves());
     }
     protected override void GameSetupReady () {
-        //throw new System.NotImplementedException ();
-        Instantiate(Player);
+        UGB.Pool.CreateNewObjectPoolEntry(Player, (int)SpaceShooter.Objecttype.player, 1);
+        UGB.Pool.CreateNewObjectPoolEntry(Enemy, (int)SpaceShooter.Objecttype.enemy, 1);
+        UGB.Pool.CreateNewObjectPoolEntry(Bomb, (int)SpaceShooter.Objecttype.bomb, 1);
+        UGB.Pool.CreateNewObjectPoolEntry(Explosion, (int)SpaceShooter.Objecttype.explosion, 1);
+        UGB.Pool.GetInstance((int)SpaceShooter.Objecttype.player);
     }
 #endregion
     void Update(){
@@ -38,7 +47,7 @@ public class SpaceShooter : Game {
         yield return new WaitForSeconds(StartWait);
         while (true) {
             for (int i = 0; i < EnemyCount; i++) {
-                Instantiate(Enemy);
+                UGB.Pool.GetInstance((int)SpaceShooter.Objecttype.enemy);
                 yield return new WaitForSeconds(SpawnWait);
             }
             yield return new WaitForSeconds(WaveWait);
