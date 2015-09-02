@@ -14,13 +14,20 @@ public class PlayerController : GameComponent<SpaceShooter> {
 	void OnEnable() {
 		UGB.Input.SwipeEvent += OnSwipe;
         UGB.Input.TapEvent += Tap;
+        UGB.Input.KeyDown += KeyDown;
         worldradiant = 1.5f * Mathf.PI;
         localradiant = 0.0f;
 	}
 	void OnDisable() {
 		UGB.Input.SwipeEvent -= OnSwipe;
         UGB.Input.TapEvent -= Tap;
+        UGB.Input.KeyDown -= KeyDown;
 	}
+    void KeyDown(string Key) {
+        if (Key == "InputLeft") {
+            Debug.Log("LEFT");
+        }    
+    }
 	void OnSwipe(TouchInformation touchInfo) {
         horizontal = touchInfo.GetHorizontalAxis();
 	}

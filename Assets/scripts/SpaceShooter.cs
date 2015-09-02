@@ -62,9 +62,10 @@ public class SpaceShooter : Game {
     public void DecrementLife() {
         if (Life > 0) {
             Life--;
-            Instantiate(Player);
-        } else {
-            GameOver();
+            if(Life == 0) 
+                GameOver();
+            else
+                Instantiate(Player);
         }
         UpdateLife();
     }
